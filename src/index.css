@@ -1,6 +1,6 @@
 :root {
   --primary-color: #38B09D;
-  --secondary-color: #222;
+  --secondary-color: #444;
   --red-color: #B22222;
   --light-color: #fff;
   --additional-color: #617D98;
@@ -160,12 +160,22 @@ aside #lineTwo {
   transition: .25s linear;
   /* border-radius: 10px; */
 }
-
-.racing:hover {
+.auto{
   background-color: var(--red-color);
   color: #fff;
 }
-
+.man:hover {
+  background-color: var(--red-color);
+  color: #fff;
+}
+.auto:hover{
+  background-color: #fff;
+  color: #333;
+}
+.buttons{
+  display: flex;
+  gap: 3rem;
+}
 /* project page */
 #project-page {
   height: 100vh;

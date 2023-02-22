@@ -44,7 +44,6 @@ export const ArrowKeys = React.memo(({value}) => {
             let translateKey;
             if(e.key === key){
                 translateKey = key === 'w'? 'up': key === 'a' ? 'left': key === 's' ? 'down': key === 'd' ? 'right':'';
-                // switchOff(keyDirections[translateKey]);
                 setKeyDown({...keyDown, [translateKey]: false});
             }
         });
@@ -65,7 +64,7 @@ export const ArrowKeys = React.memo(({value}) => {
         >
             {
                 value === 'forward' ? 
-        (
+            (
         <FaLongArrowAltUp 
         className={`controlls ${value} ${keyDown.up && "animate"}`}></FaLongArrowAltUp> 
         ):

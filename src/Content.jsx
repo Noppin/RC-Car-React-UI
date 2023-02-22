@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./index.css"
-import { SiPython,SiJavascript, SiCplusplus, SiBlender, SiApachecordova, SiGithub } from "react-icons/si";
+import { SiReact,SiTensorflow,SiPython, SiCplusplus, SiBlender, SiApachecordova } from "react-icons/si";
 import { useRef, useState } from 'react';
 import { useEffect } from 'react';
 export const Content = () => {
@@ -27,8 +28,8 @@ export const Content = () => {
             <div id="lineOne" ref={lineOne}></div>
             <div className="icons">
                 <SiPython className='icon'/>
-                <SiGithub className='icon'/>
-                <SiJavascript className='icon'/>
+                <SiTensorflow className='icon'/>
+                <SiReact className='icon'/>
                 <SiCplusplus className='icon'/>
                 <SiBlender className='icon'/>
                 <SiApachecordova className='icon'/>
@@ -44,7 +45,13 @@ export const Content = () => {
                         engineered insanity, we thought of fueling our passion 
                         for adrenaline by sharing our love to everyone who is
                         curious about our journey.</p>
-                    <a href="#project-page" className="racing">GO RACING</a>
+                        <div className="buttons">
+                            <Link to="/manPage" className="racing man">GO RACING</Link>
+                            <Link to="/manPage" className="racing man">GO AUTONOMOUS</Link>
+                        {/* <a href="#project-page" className="racing man">GO RACING</a>
+                        <a href="#project-page" className="racing auto">GO AUTONOMOUS</a> */}
+                        </div>
+                    
         </main>
     </header>
     </>
