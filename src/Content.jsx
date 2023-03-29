@@ -36,7 +36,7 @@ export const Content = () => {
             </div>
             <div id="lineTwo"></div>
         </aside>
-        <main id="text-content" style={{margin: `${calcTextContentMargin() -20}px 0 0 0`}}>
+        <main id="text-content" style={{margin: `${calcTextContentMargin() -25}px 0 0 0`}}>
             <h1>Autonomous RC-Car</h1>
                     <p>The place where an idea meets three enthusiastic programmers,
                         with a passion for Formula 1 and a simple philosophy 
@@ -47,7 +47,7 @@ export const Content = () => {
                         curious about our journey.</p>
                         <div className="buttons">
                             <Link to="/manPage" className="racing man">GO RACING</Link>
-                            <Link to="/manPage" className="racing man">GO AUTONOMOUS</Link>
+                            <Link to="/autoPage" className="racing auto">GO AUTONOMOUS</Link>
                         {/* <a href="#project-page" className="racing man">GO RACING</a>
                         <a href="#project-page" className="racing auto">GO AUTONOMOUS</a> */}
                         </div>

@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef  } from 'react'
-import { ArrowKeys } from './ArrowKeys';
-export const InfoSection = () => {  
-    const arrows = ['forward', 'right', 'backward', 'left'];
+import { Link } from 'react-router-dom';
+export const Info = () => {  
     const [hotLap, setHotLap] = useState(false);
-    const [btnStyle, setBtnStyle] = useState({bgColour: 'var(--primary-color)', color: '#fff', value: 'Press Space To Start'});
     const [lapTime, setLapTime] = useState({ms: 0, sec: 0, min: 0});
     const interval = useRef();
     const resetTimer = ()=>{
@@ -28,12 +26,11 @@ export const InfoSection = () => {
             setHotLap(true);
         	resetTimer();
             interval.current = setInterval(startTimer, 10);
-            setBtnStyle({bgColour: '#fff', color: '#333', value: 'Press Space To Stop'});
+
     }
     const stopHotLap = ()=>{
         setHotLap(false);
         clearInterval(interval.current);
-        setBtnStyle({bgColour: 'var(--primary-color)', color: '#fff', value: 'Press Space To Start'});
     }
     const handlePressSpace = (e)=>{
         if(e.code === 'Space'){
@@ -55,7 +52,7 @@ export const InfoSection = () => {
   return (
      <aside id="info-section">
         <div className="lap-time">
-                <h1>Lap Time</h1>
+                <h1>ARC AI</h1>
                 <h2>
                     <span className="minutes">{`${lapTime.min.toString().length > 1 ?lapTime.min : `0${lapTime.min}`}`}
                     </span>:<span className="seconds">{`${lapTime.sec.toString().length > 1 ? lapTime.sec : `0${lapTime.sec}`}`}
@@ -63,25 +60,7 @@ export const InfoSection = () => {
                     </span>
                 </h2>
             </div>
-            <div className="challangeTime">
-                <h4>Time To Beat</h4>
-                <h4 id="time">00:00:00</h4>
-            </div>
-            <div 
-            className="controller"
-            >       
-                {
-                    arrows.map((arrowVal, index) =>{
-                        return (
-                            <ArrowKeys key={index} value={arrowVal}/>
-                        )
-                    })
-                }
-            </div>
-            <button 
-            className="racing space" 
-            style={{backgroundColor: `${btnStyle.bgColour}`, color: `${btnStyle.color}`}}
-            >{btnStyle.value}</button>
+            <Link to="/landing-Page" className='home'>HOME</Link>
      </aside>
   )
 }

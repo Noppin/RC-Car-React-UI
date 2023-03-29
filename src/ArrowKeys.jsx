@@ -44,6 +44,7 @@ export const ArrowKeys = React.memo(({value}) => {
             let translateKey;
             if(e.key === key){
                 translateKey = key === 'w'? 'up': key === 'a' ? 'left': key === 's' ? 'down': key === 'd' ? 'right':'';
+                // switchOff(keyDirections[translateKey]);
                 setKeyDown({...keyDown, [translateKey]: false});
             }
         });
